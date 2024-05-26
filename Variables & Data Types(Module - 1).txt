@@ -1,0 +1,728 @@
+DataStructures and Algorithms using Java
+
+Variables and Data Types
+------------------------
+
+-> Creating a Java File
+-----------------------
+
+Java Programming Language(new folder) -> JavaBasics.java
+
+
+-> Boilerplate Code
+-------------------
+
+public class JavaBasics{
+    public static void main(String args[]){
+
+    }
+}
+//boilerplate code
+
+
+-> Output in java
+-----------------
+
+public class JavaBasics{
+    public static void main(String args[]){
+        System.out.println("Hello World");
+        System.out.println("Hello World");
+        System.out.println("Hello World");
+    }
+}
+
+Output: 
+Hello World
+Hello World
+Hello World
+
+
+public class JavaBasics{
+    public static void main(String args[]){
+        System.out.print("Hello World\n");
+        System.out.print("Hello World\n");
+        System.out.print("Hello World\n");
+    }
+}
+
+Output: 
+Hello World
+Hello World
+Hello World
+
+
+-> Print a pattern
+------------------
+
+public class JavaBasics{
+    public static void main(String args[]){
+        System.out.println("****");
+        System.out.println("***");
+        System.out.println("**");
+        System.out.println("*");
+    }
+}
+
+Output: 
+****
+***
+**
+*
+
+
+-> Variables in java
+--------------------
+
+public class JavaBasics{
+    public static void main(String args[]){
+        
+        int a = 10;
+        int b = 5;
+        System.out.println(a);
+        System.out.println(b);
+
+        a=50;
+        System.out.println(a);
+
+        String name = "Tony Stark";
+        System.out.println(name);
+    }
+}
+
+
+Output: 
+10
+5
+50
+Tony Stark
+
+
+-> Data Types in java
+---------------------
+
+public class JavaBasics {
+
+    public static void main(String[] args) {
+        
+        byte b = 8;        // 1 byte
+
+        short s = 234;    // 2 bytes
+
+        int i = 764457;  // 4 bytes
+
+        long l = 7363636542423l;  // 8 bytes
+
+        float f = 34.233f;  // 4 bytes
+
+        double d = 32.3283645242;  // 8 bytes
+
+        boolean bool = true;   // 1 byte
+
+        char c = 'r';  // 2 bytes
+
+        System.out.println("byte: "+b);
+        System.out.println("short: "+s);
+        System.out.println("int: "+i);
+        System.out.println("long: "+l);
+        System.out.println("float: "+f);
+        System.out.println("double: "+d);
+        System.out.println("boolean: "+bool);
+        System.out.println("char: "+c);
+
+    }
+}
+
+Output: 
+byte: 8
+short: 234
+int: 764457
+long: 7363636542423
+float: 34.233
+double: 32.3283645242
+boolean: true
+char: r
+
+
+-> Sum of a & b
+---------------
+
+public class JavaBasics{
+    public static void main(String args[]){
+        int a = 10;
+        int b = 5;
+        int sum = a+b;
+        System.out.println(sum);
+    }
+}
+
+Output: 
+15
+
+
+-> Comments in java
+-------------------
+
+public class JavaBasics{
+    public static void main(String args[]){
+        
+        // single line comment
+
+        /*
+            multi
+            line
+            comment 
+        */
+    }
+}
+
+
+Output: 
+Empty
+
+
+-> Input in java
+----------------
+
+import java.util.*;
+
+public class JavaBasics{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+		String input1 = sc.next();
+		sc.nextLine();
+        String input2 = sc.nextLine();
+        int i1 = sc.nextInt();
+        float f1 = sc.nextFloat();
+
+        System.out.println(input1);
+        System.out.println(input2);
+        System.out.println(i1);
+        System.out.println(f1);
+    }
+}
+
+Output: 
+cse
+ranjith krishna
+675
+90.24
+cse
+ranjith krishna
+675
+90.24
+
+
+-> Sum of a&b (Input from User)
+-------------------------------
+
+import java.util.*;
+
+public class JavaBasics{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+
+        int sum = a+b;
+        System.out.println(sum);
+
+    }
+}
+
+Output: 
+10
+5
+15
+
+
+-> Product of a & b
+-------------------
+
+import java.util.*;
+
+public class JavaBasics{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+
+        int product = a*b;
+        System.out.println(product);
+
+    }
+}
+
+Output:
+10
+5
+50
+
+
+-> Area of a circle
+-------------------
+
+import java.util.*;
+
+public class JavaBasics{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        float rad = sc.nextFloat();
+        float area = 3.14f * rad * rad;
+        System.out.println(area);
+
+    }
+}
+
+Output:
+2
+12.56
+
+
+
+-> Type Conversion
+------------------
+
+byte -> short -> int -> long -> float -> double
+
+public class JavaBasics{
+    public static void main(String args[]){
+        int a = 25;
+        long b = a;
+        System.out.println(b);
+    }
+}
+
+Output:
+25
+
+
+
+public class JavaBasics{
+    public static void main(String args[]){
+        long a = 25;
+        int b = a;
+        System.out.println(b);
+    }
+}
+
+
+Output:
+error: incompatible types: possible lossy conversion from long to int
+
+
+
+
+
+import java.util.*;
+
+public class JavaBasics{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        float f = sc.nextInt();
+        System.out.println(f);
+    }
+}
+
+
+Output:
+32
+32.0
+
+
+
+
+-> Type Casting
+---------------
+
+
+public class JavaBasics{
+    public static void main(String args[]){
+        float a = 25.12f;
+        int b = a;
+        System.out.println(b);
+    }
+}
+
+
+Output:
+error: incompatible types: possible lossy conversion from float to int
+
+
+
+
+public class JavaBasics{
+    public static void main(String args[]){
+        float a = 25.12f;
+        int b = (int)a;
+        System.out.println(b);
+    }
+}
+
+Output:
+25
+
+
+
+public class JavaBasics{
+    public static void main(String args[]){
+        float marks = 99.9999f;
+        int marks2 = (int)marks;
+        System.out.println(marks2);
+    }
+}
+
+
+Output:
+99
+
+
+
+
+
+public class JavaBasics{
+    public static void main(String args[]){
+        char ch = 'a';
+        char ch2 = 'A';
+        int number = ch;
+        int number2 = ch2;
+        System.out.println(number);
+        System.out.println(number2);
+    }
+}
+
+Output:
+97
+65
+
+
+
+-> Type Promotion in Expressions
+--------------------------------
+
+byte, short or char ->  int
+
+ public class JavaBasics{
+    public static void main(String args[]){
+        char a = 'a';
+        char b = 'b';
+        System.out.println((int)b);
+        System.out.println((int)a);
+        System.out.println(b);
+        System.out.println(a);
+        System.out.println(b-a);
+    }
+}
+
+
+Output:
+98
+97
+b
+a
+1
+
+
+
+
+public class JavaBasics{
+    public static void main(String args[]){
+        char a = 'a';
+        char b = 'b';
+        char c = a-b;
+        System.out.println(c);
+    }
+}
+
+
+Output:
+error: incompatible types: possible lossy conversion from int to char
+
+
+
+
+
+public class JavaBasics{
+    public static void main(String args[]){
+        short a = 5;
+        byte b = 25;
+        char c = 'c';
+        byte bt = a+b+c;
+        System.out.println(bt);
+    }
+}
+
+Output:
+error: incompatible types: possible lossy conversion from int to byte
+
+
+
+
+public class JavaBasics{
+    public static void main(String args[]){
+        short a = 5;
+        byte b = 25;
+        char c = 'c';
+        byte bt = (byte) (a + b + c);
+        System.out.println(bt);
+    }
+}
+
+
+Output:
+-127
+
+
+
+long -> long,float or double
+float -> float or double
+double -> double
+
+
+
+public class JavaBasics{
+    public static void main(String args[]){
+        int a = 10;
+        float b = 20.25f;
+        long c = 25;
+        double d = 30;
+        double ans = a+b+c+d;
+        System.out.println(ans);
+    }
+}
+
+Output:
+85.25
+
+
+
+
+
+public class JavaBasics{
+    public static void main(String args[]){
+        int a = 10;
+        float b = 20.25f;
+        long c = 25;
+        double d = 30;
+        int ans = a+b+c+d;
+        System.out.println(ans);
+    }
+}
+
+Output:
+error: incompatible types: possible lossy conversion from double to int
+
+
+
+
+
+
+
+public class JavaBasics{
+    public static void main(String args[]){
+        byte b=5;
+        byte a = b*2;
+        System.out.println(a);
+    }
+}
+
+
+Output:
+error: incompatible types: possible lossy conversion from int to byte
+
+
+
+
+
+public class JavaBasics{
+    public static void main(String args[]){
+        byte b=5;
+        byte a = (byte) (b*2);
+        System.out.println(a);
+    }
+}
+
+Output:
+10
+
+
+
+-> How does java code run?
+--------------------------
+
+
+JDK (Java Development Kit) -> Development tools (javacompiler & java doc generator)
+JRE (Java Runtime Environment) -> JVM + runtimelibraries + .class files
+JVM (Java Virtual Machine) -> execute your byte code
+
+
+How is our code running?
+
+-> Source Code (.java)
+-> Compiler
+-> Byte Code (.class)
+-> Java Virtual Machine (JVM)
+-> Native Code (0,1 machine code)
+
+
+
+
+-> Practice Questions
+---------------------
+
+
+Variables & Data types Questions
+
+
+Question 1 : In a program, input 3 numbers : A, B and C. You have to output the average of
+these 3 numbers.
+(Hint : Average of N numbers is sum of those numbers divided by N)
+
+
+
+import java.util.*;
+// Average of 3 numbers
+public class JavaBasics {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int A = sc.nextInt();
+        int B = sc.nextInt();
+        int C = sc.nextInt();
+        int average = (A + B + C) / 3;
+        System.out.println("average is : " + average);
+    }
+}
+
+
+Output:
+
+4
+4
+4
+average is : 4
+
+
+Question 2: In a program, input the side of a square. You have to output the area of the
+square.
+(Hint : area of a square is (side x side))
+
+
+
+
+import java.util.*;
+// Area of a Square
+public class JavaBasics {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int side = sc.nextInt();
+        int area = side * side;
+        System.out.println("area of the square is : " + area);
+    }
+}
+
+
+Output:
+6
+area of the square is : 36
+
+
+Question 3: Enter cost of 3 items from the user (using float data type) - a pencil, a pen and
+an eraser. You have to output the total cost of the items back to the user as their bill.
+(Add on : You can also try adding 18% gst tax to the items in the bill as an advanced problem)
+
+
+
+
+
+import java.util.*;
+// Bill of Items
+public class JavaBasics {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        float pencil = sc.nextFloat();
+        float pen = sc.nextFloat();
+        float eraser = sc.nextFloat();
+        float total = pencil + pen + eraser;
+        System.out.println("Bill is : " + total);
+        //Add on - with 18% tax
+        float newTotal = total + (0.18f * total);
+        System.out.println("Bill with 18% tax : " + newTotal);
+    }
+}
+
+
+Output:
+24
+56
+20
+Bill is : 100.0
+Bill with 18% tax : 118.0
+
+
+
+Question 4: What will be the type of result in the following Java code?
+
+byte b = 4;
+char c = 'a';
+short s = 512;
+int i = 1000;
+float f = 3.14f;
+double d = 99.9954;
+
+result = (f*b) + (i%c) - (d*s);
+
+(Hint : Look at the largest data type among these)
+
+
+
+import java.util.*;
+
+public class JavaBasics {
+    public static void main(String args[]) {
+        byte b = 4;
+        char c = 'a';
+        short s = 512;
+        int i = 1000;
+        float f = 3.14f;
+        double d = 99.9954;
+
+        double result = (f*b) + (i%c) - (d*s);
+
+        System.out.println(result);
+    }
+}
+
+
+Output:
+-51155.08479862671
+
+
+
+Question 5: (Advanced) Will the following statement give any error in Java?
+int $ = 24;
+
+
+
+import java.util.*;
+
+public class JavaBasics {
+    public static void main(String args[]) {
+        
+        int $ = 24;
+        System.out.println($);
+    }
+}
+
+
+Output:
+24
+
+
+Note - These questions are only to help you practice the concepts of this chapter. These are
+not designed to test your mathematical skills, just to understand logic building using Java. 
+
+
+
+------------------------------------------------------------------------------------------------------
+
