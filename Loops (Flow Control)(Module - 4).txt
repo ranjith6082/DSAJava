@@ -1,0 +1,686 @@
+Loops (Flow Control)
+
+-> Loops Basics
+---------------
+
+import java.util.*;
+
+public class JavaBasics{
+    public static void main(String args[]) {
+
+        System.out.println("Hello World!");
+        System.out.println("Hello World!");
+        System.out.println("Hello World!");
+    }
+}
+
+
+output:
+Hello World!
+Hello World!
+Hello World!
+
+
+while Loop
+
+for Loop
+
+do while Loop
+
+
+-> while Loop
+-------------
+
+while(condition){
+	// do something
+}
+
+import java.util.*;
+
+public class JavaBasics{
+    public static void main(String args[]) {
+
+        int counter = 0;
+
+        while(counter < 10){
+            System.out.println("Hello World");
+            counter++;
+        }
+
+        System.out.println("printed HW 10x");
+    }
+}
+
+
+output:
+Hello World
+Hello World
+Hello World
+Hello World
+Hello World
+Hello World
+Hello World
+Hello World
+Hello World
+Hello World
+printed HW 10x
+
+
+-> print numbers from 1 to 10
+-----------------------------
+
+import java.util.*;
+
+public class JavaBasics{
+    public static void main(String args[]) {
+
+        int counter = 1;
+
+        while(counter <= 10){
+            System.out.print(counter+" ");
+            counter++;
+        }
+    }
+}
+
+
+output:
+1 2 3 4 5 6 7 8 9 10 
+
+
+-> print numbers from 1 to n
+----------------------------
+
+import java.util.*;
+
+public class JavaBasics{
+    public static void main(String args[]) {
+
+        Scanner sc = new Scanner(System.in);
+        int range = sc.nextInt();
+        int counter = 1;
+
+        while(counter <= range){
+            System.out.print(counter+" ");
+            counter++;
+        }
+    }
+}
+
+
+output:
+15
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+
+
+-> Sum of first N natural numbers
+---------------------------------
+
+import java.util.*;
+
+public class JavaBasics{
+    public static void main(String args[]) {
+
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int i = 1;
+        int sum = 0;
+
+        while(i <= n){
+            sum += i;
+            i++;
+        }
+
+        System.out.println("sum is: "+sum);
+    }
+}
+
+
+output:
+5
+sum is: 15
+
+
+
+-> for Loop
+-----------
+
+for(initialisation; condition; updation){
+	// do something
+}
+
+
+import java.util.*;
+
+public class JavaBasics{
+    public static void main(String args[]) {
+
+        for(int i = 1;i <= 10;i++){
+            System.out.println("Hello World");
+        }
+    }
+}
+
+
+output:
+Hello World
+Hello World
+Hello World
+Hello World
+Hello World
+Hello World
+Hello World
+Hello World
+Hello World
+Hello World
+
+
+-> print square pattern
+-----------------------
+
+import java.util.*;
+
+public class JavaBasics{
+    public static void main(String args[]) {
+
+        for(int line=1; line <= 4;line++){
+            System.out.println("****");
+        }
+    }
+}
+
+
+output:
+****
+****
+****
+****
+
+
+import java.util.*;
+
+public class JavaBasics{
+    public static void main(String args[]) {
+
+        int line = 1;
+        while(line <= 4){
+            System.out.println("****");
+            line++;
+        }
+    }
+}
+
+
+output:
+****
+****
+****
+****
+
+
+
+-> Print reverse of a number
+----------------------------
+
+import java.util.*;
+
+public class JavaBasics{
+    public static void main(String args[]) {
+
+        int n = 10899;
+
+        while(n > 0){
+            int lastDigit = n % 10;
+            System.out.print(lastDigit);
+            n /= 10;
+        }
+    }
+}
+
+
+output:
+99801
+
+
+
+-> Reverse the given number
+---------------------------
+
+import java.util.*;
+
+public class JavaBasics{
+    public static void main(String args[]) {
+
+        int n = 10899;
+        int rev = 0;
+
+        while(n > 0){
+            int lastDigit = n%10;
+            rev = (rev * 10) + lastDigit;
+            n /= 10;
+        }
+        System.out.println(rev);
+    }
+}
+
+
+output:
+99801
+
+
+-> do while Loop
+----------------
+
+
+do{
+	// do something
+}while(condition);
+
+
+import java.util.*;
+
+public class JavaBasics{
+    public static void main(String args[]) {
+
+        int counter = 1;
+
+        do{
+            System.out.println("Hello World");
+            counter++;
+        }while(counter <= 10);
+    }
+}
+
+output:
+
+Hello World
+Hello World
+Hello World
+Hello World
+Hello World
+Hello World
+Hello World
+Hello World
+Hello World
+Hello World
+
+
+-> Break statement
+------------------
+
+to exit the loop
+
+import java.util.*;
+
+public class JavaBasics{
+    public static void main(String args[]) {
+
+        for(int i=1;i <= 5;i++){
+            if(i == 3){
+                break;
+            }
+            System.out.println(i);
+        }
+        System.out.println("i am out of the loop");
+    }
+}
+
+
+output:
+1
+2
+i am out of the loop
+
+
+-> Question - break keyword
+---------------------------
+
+keep entering numbers till user enters a multiple of 10
+
+import java.util.*;
+
+public class JavaBasics{
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        do{
+            System.out.print("enter your number: ");
+            int n = sc.nextInt();
+            if(n % 10 == 0){
+                break;
+            }
+            System.out.println(n);
+        }while(true);
+    }
+}
+
+
+output:
+enter a number: 5
+5
+enter a number: 6
+6
+enter a number: 20
+
+
+-> Continue statement
+---------------------
+
+to skip an iteration
+
+
+import java.util.*;
+
+public class JavaBasics{
+    public static void main(String args[]) {
+        
+        for(int i = 1;i <= 5;i++){
+            if(i == 3){
+                continue;
+            }
+            System.out.println(i);
+        }
+    }
+}
+
+
+output:
+1
+2
+4
+5
+
+
+-> Question - continue keyword
+------------------------------
+
+display all numbers entered by user except multiples of 10
+
+import java.util.*;
+
+public class JavaBasics{
+    public static void main(String args[]) {
+        
+        Scanner sc = new Scanner(System.in);
+
+        do{
+            System.out.println("enter your number: ");
+            int n = sc.nextInt();
+            if(n % 10 == 0){
+                continue;
+            }
+            System.out.println("number was: "+n);
+        }while(true);
+
+        
+    }
+}
+
+
+output:
+enter your number: 
+4
+number was: 4
+enter your number:
+6
+number was: 6
+enter your number:
+20
+enter your number:
+
+
+-> check if a number is Prime or not
+------------------------------------
+
+
+import java.util.*;
+
+public class JavaBasics{
+    public static void main(String args[]) {
+        
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        boolean isPrime = true;
+        
+        if(n<=1){
+            isPrime = false;
+        }
+        for(int i = 2;i <= n-1;i++){
+            if(n % i == 0){
+                isPrime = false;
+            }
+        }
+
+        if(isPrime == true){
+            System.out.println("n is prime");
+        }else{
+            System.out.println("n is not prime");
+        }
+    }
+}
+
+
+output:
+
+100
+n is not prime
+
+113
+n is prime
+
+
+
+import java.util.*;
+
+public class JavaBasics{
+    public static void main(String args[]) {
+        
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        boolean isPrime = true;
+        
+        if(n<=1){
+            isPrime = false;
+        }
+        for(int i = 2;i <= Math.sqrt(n);i++){
+            if(n % i == 0){
+                isPrime = false;
+            }
+        }
+
+        if(isPrime == true){
+            System.out.println("n is prime");
+        }else{
+            System.out.println("n is not prime");
+        }
+    }
+}
+
+output:
+
+100
+n is not prime
+
+113
+n is prime
+
+
+-> Practice Questions
+---------------------
+
+Question 1 :How many times 'Hello' is printed?
+
+import java.util.*;
+
+public class JavaBasics{
+    public static void main(String[] args){
+        for(int i = 0; i < 5; i++) {
+            System.out.println("Hello");
+            i+=2;
+        }
+    }
+}
+
+
+output:
+Hello is printed 2 times
+
+
+
+Question2 : Write a program that reads a set of integers, and then prints the sum of the even and odd integers
+
+
+import java.util.*;
+
+public class JavaBasics{
+    public static void main(String[] args){
+        
+        Scanner sc = new Scanner(System.in);
+
+        int choice;
+        int evenSum = 0;
+        int oddSum = 0;
+
+        do{
+            System.out.print("enter the number: ");
+            int number = sc.nextInt();
+
+            if(number % 2 ==0){
+                evenSum += number;
+            }else{
+                oddSum += number;
+            }
+
+            System.out.print("Do you want to continue? Press 1 for yes or 0 for no: ");
+            choice = sc.nextInt();
+
+        }while(choice == 1);
+
+        System.out.println("Sum of even numbers: "+evenSum);
+        System.out.println("Sum of odd numbers: "+oddSum);
+
+
+    }
+}
+
+
+output:
+
+enter the number: 2
+Do you want to continue? Press 1 for yes or 0 for no: 1
+enter the number: 2
+Do you want to continue? Press 1 for yes or 0 for no: 1
+enter the number: 3
+Do you want to continue? Press 1 for yes or 0 for no: 1
+enter the number: 3
+Do you want to continue? Press 1 for yes or 0 for no: 0
+Sum of even numbers: 4
+Sum of odd numbers: 6
+
+
+
+Question 3 :Write a program to find the factorial of any number entered by the user.
+
+(Hint : factorial of a number n = n * (n-1) * (n-2) * (n-3) * ......* 1 and exists 
+for positive numbers only. We write factorial as n! So, factorial of 0! = 1, 1! = 1, 
+2! = 2, 3! = 6, 4! = 24 and so on. 
+Note - Please do not confuse factorial with NOT EQUAL TO operator, they are not the same)
+
+
+import java.util.*;
+
+public class JavaBasics{
+    public static void main(String[] args){
+        
+        Scanner sc = new Scanner(System.in);
+
+        int fact = 1;  // To hold Factorial
+        System.out.println("enter any positive integer: ");
+        int num = sc.nextInt();
+
+        for(int i = 1;i <= num; i++){
+            fact *= i;
+        }
+
+        System.out.println("Factorial: "+fact);
+    }
+}
+
+
+output:
+enter any positive integer: 
+4
+Factorial: 24
+
+
+Question4: Write a program to print the multiplication table of a number N , entered by the user.
+
+import java.util.*;
+
+public class JavaBasics{
+    public static void main(String[] args){
+        
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("enter number: ");
+        int num = sc.nextInt();
+
+        for(int i = 1;i <= 10;i++){
+            System.out.println(num+" * "+i+" = "+(num*i));
+        }
+    }
+}
+
+output:
+enter number: 5
+5 * 1 = 5
+5 * 2 = 10
+5 * 3 = 15
+5 * 4 = 20
+5 * 5 = 25
+5 * 6 = 30
+5 * 7 = 35
+5 * 8 = 40
+5 * 9 = 45
+5 * 10 = 50
+
+
+
+Question 5 :What is wrong in the following program?
+
+import java.util.*;
+
+public class JavaBasics{
+    public static void main(String args[]) {
+        for(int i = 0; i <= 5; i++ ) {
+            System.out.println("i = "+i);
+        }
+        System.out.println("i after the loop = "+ i);
+    }
+}
+
+
+output:
+
+JavaBasics.java:8: error: cannot find symbol
+        System.out.println("i after the loop = "+ i);
+                                                  ^
+  symbol:   variable i
+  location: class JavaBasics
+1 error
+error: compilation failed
+
+
+Scope of variable is referred to the part of the program where the variable can be used.
+In this program variable i is declared in the for loop. So scope of variable i is limited
+to the for loop only that is between { and } of the for loop. There is a display statement
+after the for loop where variable i is used which means i is used outof scope. This leads 
+to compilation errors. The program given will not run and give an error instead. To correct
+the program, the variable i needs to be declared outside the for loop.
+
+
+
+----------------------------------------------------------------------------------------------------------
