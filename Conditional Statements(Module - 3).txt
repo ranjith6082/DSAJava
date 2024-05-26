@@ -1,0 +1,508 @@
+Conditional Statements
+----------------------
+
+() -> paranthesis
+{} -> curly braces
+
+-> if else
+----------
+
+if(condition){
+
+}
+else{
+
+}
+
+
+import java.util.*;
+
+public class JavaBasics {
+    public static void main(String[] args){
+
+        int age = 16;
+
+        if(age >= 18){
+            System.out.println("adult : drive, vote");
+        }
+        if(age > 13 && age < 18){
+            System.out.println("teenager");
+        }
+        else{
+            System.out.println("not adult");
+        }
+    }
+}
+
+output:
+teenager
+
+
+-> Print the largest of 2 numbers
+---------------------------------
+
+
+import java.util.*;
+
+public class JavaBasics {
+    public static void main(String[] args){
+
+        int A = 1;
+        int B = 5;
+
+        if(A >= B){
+            System.out.println("A is largest of 2");
+        }else{
+            System.out.println("B is largest of 2");
+        }
+    }
+}
+
+output:
+
+B is largest of 2
+
+
+-> Print if number is odd or even
+---------------------------------
+
+4 (even)
+1 (odd)
+
+import java.util.*;
+
+public class JavaBasics {
+    public static void main(String[] args){
+
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+
+        if(number % 2 == 0){
+            System.out.println("EVEN");
+        }else{
+            System.out.println("ODD");
+        }
+    }
+}
+
+
+output:
+
+34
+EVEN
+
+
+-> else if
+----------
+
+if(condition 1){
+
+}
+else if(condition 2){
+
+}
+else{
+
+}
+
+
+import java.util.*;
+
+public class JavaBasics {
+    public static void main(String[] args){
+
+        int age = 10;
+
+        if(age >= 18){
+            System.out.println("adult");
+        }else if(age >= 13 && age < 18){
+            System.out.println("teenager");
+        }else{
+            System.out.println("child");
+        }
+    }
+}
+
+output:
+child
+
+-> Income Tax Calculator
+------------------------
+
+income < 5L
+0% tax
+
+income between 5-10L
+20% tax
+
+income > 10L
+30% tax
+
+
+import java.util.*;
+
+public class JavaBasics {
+    public static void main(String[] args){
+
+        Scanner sc = new Scanner(System.in);
+        int income = sc.nextInt();
+        int tax;
+        
+        if(income < 500000){
+            tax = 0;
+        }else if(income >=500000 && income < 1000000){
+            tax = (int)(income * 0.2);
+        }else{
+            tax = (int)(income * 0.3);
+        }
+
+        System.out.println("Your tax is : "+tax);
+    }
+}
+
+
+output:
+
+600000
+Your tax is : 120000
+
+
+-> Print the largest of 3 numbers
+---------------------------------
+
+import java.util.*;
+
+public class JavaBasics {
+    public static void main(String[] args){
+
+        int A = 1, B = 3, C = 6;
+
+        if((A >= B) && (A >= C)){
+            System.out.println("largest is A");
+        }else if(B>=C){
+            System.out.println("largest is B");
+        }else{
+            System.out.println("largest is C");
+        }
+    }
+}
+
+output:
+largest is C
+
+
+-> Ternary Operator
+-------------------
+
+variable = condition ? statement1 : statement2;
+
+import java.util.*;
+
+public class JavaBasics {
+    public static void main(String[] args){
+
+        int number = 4;
+
+        String type = ((number % 2) == 0) ? "even" : "odd";
+        System.out.println(type);
+    }
+}
+
+output:
+even
+
+
+-> Check if a student will Pass or Fail
+---------------------------------------
+
+
+import java.util.*;
+
+public class JavaBasics {
+    public static void main(String[] args){
+
+        int marks = 67;
+
+        String reportCard = marks >= 33 ? "PASS" : "FAIL";
+        System.out.println(reportCard);
+    }
+}
+
+output:
+PASS
+
+
+-> switch statement
+-------------------
+
+
+switch(variable){
+
+case 1:
+
+case 2:
+
+case 3:
+
+default :
+
+}
+
+
+import java.util.*;
+
+public class JavaBasics {
+    public static void main(String[] args){
+
+        int number = 2;
+
+        switch(number){
+            case 1: System.out.println("samosa");
+                break;
+            case 2: System.out.println("burger");
+                break;
+            case 3: System.out.println("mango shake");
+                break;
+            default: System.out.println("we wake up");
+        }
+    }
+}
+
+
+output:
+burger
+
+
+import java.util.*;
+
+public class JavaBasics {
+    public static void main(String[] args){
+
+        char ch = 'b';
+
+        switch(ch){
+            case 'a': System.out.println("samosa");
+                break;
+            case 'b': System.out.println("burger");
+                break;
+            case 'c': System.out.println("mango shake");
+                break;
+            default: System.out.println("we wake up");
+        }
+    }
+}
+
+output:
+burger
+
+
+-> Calculator
+-------------
+
+import java.util.*;
+
+public class JavaBasics {
+    public static void main(String[] args){
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter a: ");
+        int a = sc.nextInt();
+        System.out.println("enter b: ");
+        int b = sc.nextInt();
+        System.out.println("enter operator: ");
+        char operator = sc.next().charAt(0);
+
+        switch(operator){
+            case '+' : System.out.println(a+b);
+                        break;
+            case '-' : System.out.println(a-b);
+                        break;
+            case '*' : System.out.println(a*b);
+                        break;
+            case '/' : System.out.println(a/b);
+                        break;
+            case '%' : System.out.println(a%b);
+                        break;
+            default : System.out.println("wrong operator");
+        }
+    }
+}
+
+
+output:
+
+enter a: 
+5
+enter b:
+5
+enter operator:
+*
+25
+
+
+-> Practice Questions
+---------------------
+
+Question1: Write a Java program to get a number from the user and print whether it is positive or negative.
+
+
+import java.util.*;
+
+public class JavaBasics {
+    public static void main(String[] args){
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter number: ");
+        int x = sc.nextInt();
+
+        if(x > 0){
+            System.out.println(x+" is greater than 0");
+        }else{
+            System.out.println(x+" is less than or equal 0");
+        }
+    }
+}
+
+output:
+enter number: 
+34
+34 is greater than 0
+
+
+enter number: 
+0
+0 is less than or equal 0
+
+
+Question2:Finish the following code so that it prints You have a fever if your temperature is above 100 and otherwise 
+prints You don't have a fever.
+
+
+public class Solution{
+	public static void main(String[] args){
+		double temp = 103.5;
+		
+	}
+}
+
+
+import java.util.*;
+
+public class JavaBasics {
+    public static void main(String[] args){
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter temperature: ");
+        double temp = sc.nextFloat();
+        if(temp > 100){
+            System.out.println("you have a fever");
+        }else{
+            System.out.println("you don't have a fever");
+        }
+
+    }
+}
+
+
+output:
+
+enter temperature
+103.5
+you have a fever
+
+
+Question3: Write a Java program to input week number(1-7) and print day of week name using switch case
+
+
+import java.util.*;
+
+public class JavaBasics {
+    public static void main(String[] args){
+
+        Scanner sc = new Scanner(System.in);
+        /* Input week number from user */
+        System.out.println("Enter week number(1-7): ");
+        int week = sc.nextInt();
+
+        switch(week){
+            case 1: System.out.println("Monday");
+                break;
+            case 2: System.out.println("Tuesday");
+                break;
+            case 3: System.out.println("Wednesday");
+                break;
+            case 4: System.out.println("Thursday");
+                break;
+            case 5: System.out.println("Friday");
+                break;
+            case 6: System.out.println("Saturday");
+                break;
+            case 7: System.out.println("Sunday");
+                break;
+            default:
+                System.out.println("Invalid input! Please enter week number between 1-7.");
+        }
+
+    }
+}
+
+output:
+Enter week number(1-7): 
+4
+Thursday
+
+
+Question 4 :What will be the value of x & y in the following program:
+
+import java.util.*;
+
+public class JavaBasics{
+    public static void main(String args[]) {
+        int a = 63, b = 36;
+        boolean x = (a < b) ? true : false;
+        int y = (a > b) ? a : b;
+        System.out.println("Value of x = "+x+" & "+"y = "+y);
+    }
+}
+
+
+output:
+Value of x = false & y = 63
+
+
+
+Question 5 : Write a Java program that takes a year from the user and print whether that year is a leap year or not.
+
+
+import java.util.*;
+
+public class JavaBasics{
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Input the year: ");
+        int year = sc.nextInt();
+
+        boolean x = (year % 4) == 0;
+        boolean y = (year % 100) != 0;
+        boolean z = ((year % 100 == 0) && (year % 400 == 0));
+
+        if(x && (y || z)){
+            System.out.println(year+" is a leap year");
+        }else{
+            System.out.println(year+" is not a leap year");
+        }
+    }
+}
+
+
+output:
+
+Input the year: 
+2024
+2024 is a leap year
+
+
+
+
+-------------------------------------------------------------------------------------------------------------
+
