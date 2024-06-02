@@ -1,0 +1,745 @@
+Functions & Methods
+-------------------
+
+-> Introduction to functions
+----------------------------
+
+block of code/reusable
+
+-> Syntax - function code demo
+------------------------------
+
+returnType name(){
+	//body
+	return statement;
+}
+
+
+import java.util.*;
+
+public class JavaBasics{
+
+    public static void printHelloWorld(){
+        System.out.println("Hello World");
+        System.out.println("Hello World");
+        System.out.println("Hello World");
+    }
+
+    public static void main(String[] args) {
+        printHelloWorld();
+    }
+}
+
+
+output:
+Hello World
+Hello World
+Hello World
+
+
+-> Syntax with parameters
+-------------------------
+
+returnType name(type param1, type param2){
+	//body
+	return statement;
+}
+
+
+import java.util.*;
+
+public class JavaBasics{
+
+    public static int calculateSum(int num1, int num2){ //formal parameters/parameters
+        int sum = num1 + num2;
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int sum = calculateSum(a,b); // actual parameters/arguments
+        System.out.println("sum is: "+sum);
+    }
+}
+
+
+output:
+5
+10
+sum is: 15
+
+
+
+-> Parameters v/s Arguments
+---------------------------
+
+1. formal parameters/parameters -> function definition
+2. actual parameters/arguments -> function call
+
+
+-> What happens in memory? (Call Stack)
+---------------------------------------
+
+Inside the call stack, each function is stored in a stack frame.
+
+
+-> Call by Value (in java)
+--------------------------
+
+Java always calls by value
+
+import java.util.*;
+
+public class JavaBasics{
+
+    public static void swap(int a,int b){
+
+        int temp = a;
+        a = b;
+        b = temp;
+
+        System.out.println("a = "+a);
+        System.out.println("b = "+b);
+    }
+
+    public static void main(String[] args) {
+      
+        int a = 5;
+        int b = 10;
+        swap(a,b);
+    }
+}
+
+
+output:
+a = 10
+b = 5
+
+
+
+-> Product of a & b
+-------------------
+
+
+import java.util.*;
+
+public class JavaBasics{
+
+    public static int multiply(int a, int b){
+        int product = a * b;
+        return product;
+    }
+
+    public static void main(String[] args) {
+        
+        int a = 3;
+        int b = 5;
+        int prod = multiply(a, b);
+        System.out.println("a * b = "+prod);
+        prod = multiply(10, 20);
+        System.out.println("a * b = "+prod);
+
+    }
+}
+
+
+output:
+a * b = 15
+a * b = 200
+
+
+-> Find Factorial
+-----------------
+
+import java.util.*;
+
+public class JavaBasics{
+
+    public static int factorial(int n){
+        
+        int fact = 1;
+
+        for(int i = 1;i <= n;i++){
+            fact *= i;
+        }
+
+        return fact;
+    }
+
+    public static void main(String[] args) {
+        
+        System.out.println(factorial(4));
+
+    }
+}
+
+output:
+24
+
+
+-> Find Binomial Coefficient
+----------------------------
+
+
+import java.util.*;
+
+public class JavaBasics{
+
+    public static int factorial(int n){
+        
+        int fact = 1;
+
+        for(int i = 1;i <= n;i++){
+            fact *= i;
+        }
+
+        return fact;
+    }
+
+
+    public static int binCoeff(int n, int r){
+
+        int fact_n = factorial(n);
+        int fact_r = factorial(r);
+        int fact_nmr = factorial(n-r);
+
+        int binCoeff = fact_n / (fact_r * fact_nmr);
+
+        return binCoeff;
+    }
+
+    public static void main(String[] args) {
+        
+        System.out.println(binCoeff(5, 2));
+
+    }
+}
+
+output:
+10
+
+
+-> Inbuilt v/s User defined Methods
+-----------------------------------
+
+user defined
+
+factorial, sum, product
+
+inbuilt method
+
+Math - pow, sqrt, max, nextInt()
+
+
+
+-> Function Overloading
+-----------------------
+
+Multiple functions with the same name but different parameters
+
+- change the type of parameters
+- change the number of parameters
+
+
+-> Overloading using Parameters
+-------------------------------
+
+
+import java.util.*;
+
+public class JavaBasics{
+
+    //func to calc sum of 2 nums
+    public static int sum(int a, int b){
+        return a + b;
+    }
+
+    //func to calc sum of 3 nums
+    public static int sum(int a, int b, int c){
+        return a + b + c;
+    }
+
+    public static void main(String[] args) {
+        
+        System.out.println(sum(3, 5));
+        System.out.println(sum(5, 2, 1));
+
+    }
+}
+
+output:
+8
+8
+
+
+-> Overloading using Data Types
+-------------------------------
+
+
+import java.util.*;
+
+public class JavaBasics{
+
+    //func to calc int sum
+    public static int sum(int a, int b){
+        return a + b;
+    }
+
+    //func to calc float sum
+    public static float sum(float a, float b){
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        
+        System.out.println(sum(3, 5));
+        System.out.println(sum(3.2f,4.8f));
+
+    }
+}
+
+
+output:
+8
+8.0
+
+
+-> Check if a number is Prime or not
+------------------------------------
+
+
+import java.util.*;
+
+public class JavaBasics{
+
+    public static boolean isPrime(int n){
+
+        for(int i = 2; i <= n-1;i++){
+            if(n % i == 0){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(isPrime(2));
+    }
+}
+
+
+output:
+true
+
+
+
+-> Check Prime (Optimized)
+--------------------------
+
+
+import java.util.*;
+
+public class JavaBasics{
+
+    public static boolean isPrime(int n){
+
+        for(int i = 2; i <= Math.sqrt(n);i++){
+            if(n % i == 0){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(isPrime(7));
+    }
+}
+
+
+output:
+true
+
+
+
+-> Primes in Range
+------------------
+
+
+import java.util.*;
+
+public class JavaBasics{
+
+    public static boolean isPrime(int n){
+
+        for(int i = 2; i <= Math.sqrt(n);i++){
+            if(n % i == 0){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void primesInRange(int n){
+
+        for(int i = 2; i <= n;i++){
+            if(isPrime(i)){
+                System.out.print(i+" ");
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        primesInRange(20);
+    }
+}
+
+
+output:
+2 3 5 7 11 13 17 19
+
+
+
+
+-> Binary to Decimal
+--------------------
+
+
+import java.util.*;
+
+public class JavaBasics{
+
+    public static void binToDec(int binNum){
+        int decToBin = 0;
+        int pow = 0;
+        int myNum = binNum;
+
+        while(binNum > 0){
+            int lastdigit = binNum % 10;
+            decToBin = decToBin + (lastdigit * (int)Math.pow(2, pow));
+            pow++;
+            binNum = binNum/10;
+        }
+        System.out.println("decimal of "+myNum+" = "+decToBin);
+    }
+
+    public static void main(String[] args) {
+        binToDec(1010);
+    }
+}
+
+
+output:
+decimal of 1010 = 10
+
+
+
+-> Decimal to Binary
+--------------------
+
+
+import java.util.*;
+
+public class JavaBasics{
+
+    public static void decToBin(int decNum){
+        int myNum = decNum;
+        int pow = 0;
+        int binNum = 0;
+
+        while(decNum > 0){
+            int lastdigit = decNum % 2;
+            binNum = binNum + (lastdigit * (int)Math.pow(10, pow));
+
+            pow++;
+            decNum = decNum / 2;
+        }
+        System.out.println("binary form of "+myNum+" = "+binNum);
+    }
+
+    public static void main(String[] args) {
+        decToBin(7);
+    }
+}
+
+
+output:
+binary form of 7 = 111
+
+
+
+-> Method Scope
+---------------
+
+import java.util.*;
+
+public class JavaBasics{
+
+    public static void printS(){
+        int s = 45;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(s);
+    }
+}
+
+output:
+
+JavaBasics.java:10: error: cannot find symbol
+        System.out.println(s);
+                           ^
+  symbol:   variable s
+  location: class JavaBasics
+1 error
+error: compilation failed
+
+
+
+-> Block Scope
+--------------
+
+import java.util.*;
+
+public class JavaBasics{
+
+    public static void main(String[] args) {
+        int p = 10;
+        {
+            int s = 45;
+            System.out.println(p);
+        }
+        //System.out.println(s);
+        System.out.println(p);
+
+    }
+}
+
+
+output:
+10
+10
+
+
+import java.util.*;
+
+public class JavaBasics{
+
+    public static void main(String[] args) {
+        for(int i = 1,j = 0, k = 4; i<=5 ;i++){
+
+        }
+        int i = 4;
+        System.out.println(i);
+
+    }
+}
+
+
+output:
+4
+
+
+
+Practice Questions
+------------------
+
+
+Question 1 :Write a Java method to compute the averageof three numbers.
+
+import java.util.Scanner;
+
+public class JavaBasics{
+    public static void main(String[]args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Input the first number: ");
+        double x = sc.nextDouble();
+        System.out.print("Input the second number:");
+        double y = sc.nextDouble();
+        System.out.print("Input the third number: ");
+        double z = sc.nextDouble();
+        System.out.print("The average value is "+average(x,y,z)+"\n");
+    
+    }
+    public static double average(double x,double y,double z) {
+        return(x+y+z) /3;
+    }
+}
+
+
+output:
+Input the first number: 4  
+Input the second number:3
+Input the third number: 5
+The average value is 4.0
+
+
+
+Question2 : Write a method named isEven that accepts an int argument.The method should return true if the argument is even,
+or false otherwise. Also write a program to test your method.
+
+import java.util.*;
+
+public class JavaBasics{
+    public static void main(String[]args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int num;
+        System.out.print("Enter an integer: ");
+        
+        num=sc.nextInt();
+        if(isEven(num)) {
+            System.out.println("Number is even");
+        }else{
+            System.out.println("Number is odd");
+       }
+    }
+    
+    public static boolean isEven(int number) {
+        if(number % 2 == 0) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+}
+
+
+output:
+Enter an integer: 23
+Number is odd
+
+
+
+Question3 : Write a Java program to check if a number is a palindrome in Java?(121 is a palindrome, 321 is not)
+A number is called a palindrome if the number is equal to the reverse of a number e.g., 121 is a palindrome because
+the reverse of 121 is 121 itself. On the other hand,321 is not a palindrome because the reverse of 321 is 123, 
+which is not equal to 321.
+
+
+import java.util.Scanner;
+
+public class JavaBasics{
+    public static void main(String args[]) {
+        System.out.println("Please Enter a number :");
+        Scanner sc = new Scanner(System.in);
+        
+        int palindrome=sc.nextInt();
+        if(isPalindrome(palindrome)) {
+            System.out.println("Number : "+palindrome+" is a palindrome");
+        }else{
+            System.out.println("Number : "+palindrome+" is not a palindrome");
+        }
+    }
+    
+    public static boolean isPalindrome(int number){
+        int palindrome=number;
+        int reverse=0;
+        
+        while(palindrome!=0) {
+            int remainder=palindrome%10;
+            reverse=reverse*10+remainder;
+            palindrome=palindrome/10;
+        }
+        // if original and the reverse of number is equal means
+        // number is palindrome in Java
+        
+        if(number==reverse) {
+            return true;
+        }
+        return false;
+    }
+}
+
+
+output:
+Please Enter a number :
+121
+Number : 121 is a palindrome
+
+
+
+Question 4 : READ & CODE EXERCISE 
+Search about (Google) & use the following methods of the Math class in Java:
+
+a.Math.min( )
+b.Math.max( )
+c.Math.sqrt( )
+d.Math.pow( )
+e.Math.avg( )
+f.Math.abs( )
+
+
+import java.util.*;
+
+public class JavaBasics{
+
+    public static int avg(int a, int b, int c){
+        return (a+b+c)/3;
+    }
+    public static void main(String args[]) {
+        
+        System.out.println("Math min: "+Math.min(10,20));
+        System.out.println("Math max: "+Math.max(10,20));
+        System.out.println("Math sqrt: "+(int)Math.sqrt(64));
+        System.out.println("Math pow: "+(int)Math.pow(2,5));
+        System.out.println("Math avg: "+avg(10,20,30));
+        System.out.println("Math abs: "+Math.abs(-23));
+    }
+    
+}
+
+
+output:
+Math min: 10
+Math max: 20
+Math sqrt: 8
+Math pow: 32
+Math avg: 20
+Math abs: 23
+
+
+
+Question 5 : Write a Java method to compute the sum of the digits in an integer.
+(Hint: Approach this question in the following way:
+
+a.Take a variable sum = 0
+b.Find the last digit of the number
+c.Add it to the sum
+d.Repeat a & b until the number becomes 0 )
+
+
+import java.util.Scanner;
+
+public class JavaBasics{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Input an integer: ");
+        int digits=sc.nextInt();
+        System.out.println("The sum is "+sumDigits(digits));
+    }
+    
+    
+    public static int sumDigits(int n) {
+        int sumOfDigits=0;
+        while(n>0) {
+            int lastDigit=n%10;
+            sumOfDigits+=lastDigit;
+            n/=10;
+        }
+        return sumOfDigits;
+    }
+}
+
+
+output:
+Input an integer: 3453 
+The sum is 15
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------
